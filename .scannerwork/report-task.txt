@@ -1,0 +1,6 @@
+projectKey=apirest
+serverUrl=http://localhost:9000
+serverVersion=9.9.1.69595
+dashboardUrl=http://localhost:9000/dashboard?id=apirest
+ceTaskId=AYhGj8zXrZdlwrj_vSVn
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYhGj8zXrZdlwrj_vSVn
