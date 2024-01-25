@@ -2,14 +2,14 @@ import express from "express";
 import { Signale } from "signale";
 
 import { loadRouter } from "./event/LoadRouter";
-import { productRouter } from "./product/infrastructure/ProductRouter";
+import { userRouter } from "./user/infrestructure/UserRouter";
 
 const app = express();
 
 const signale = new Signale();
 
 app.use(express.json());
-app.use("/products", productRouter);
+app.use("/users", userRouter);
 app.use("/load", loadRouter);
 
 app.listen(3000, () => {
