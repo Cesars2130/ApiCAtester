@@ -1,24 +1,23 @@
 import { Request, Response } from "express";
 
-import { GetAllProductUseCase } from "../../application/GetAllProductUseCase";
+import { GetAllTransformerUseCase } from "../../application/GetAllTransformerUseCase";
 
-export class GetAllProductController {
-  constructor(readonly getAllProductUseCase: GetAllProductUseCase) {}
+export class GetAllTransformerController {
+  constructor(readonly getAllTransformerUseCase: GetAllTransformerUseCase) {}
 
   async run(req: Request, res: Response) {
     try {
-      const products = await this.getAllProductUseCase.run();
-      console.log(products);
-      if (products)
+      const transformers = await this.getAllTransformerUseCase.run();
+      console.log(transformers);
+      if (transformers)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
-          data: products.map((product: any) => {
+          data: transformers.map((transformer: any) => {
             return {
-              id: product.id,
-              name: product.name,
-              description: product.description,
-              price: product.price,
+              id: transformer.id,
+              status: transformer.status,
+              id_user: transformer.id_user
             };
           }),
         });

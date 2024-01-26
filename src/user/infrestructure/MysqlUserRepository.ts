@@ -22,9 +22,7 @@ export class MysqlUserRepository implements UserRepository {
     const params: any[] = [userId];
     try {
       const [result]: any = await query(sql, params);
-      //El objeto Result es un objeto que contiene info generada de la bd
-      /*No es necesaria la validación de la cantidad de filas afectadas, ya que, al
-            estar dentro de un bloque try/catch si hay error se captura en el catch */
+
       return new User(
         result[0].id,
         result[0].name,

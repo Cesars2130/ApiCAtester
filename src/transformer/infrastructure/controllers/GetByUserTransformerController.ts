@@ -1,24 +1,24 @@
 import { Request, Response } from "express";
 
-import { GetByIdProductUseCase } from "../../application/GetByIdProductUseCase";
+import { GetByIdTransformerUseCase } from "../../application/GetByIdTransformerUseCase";
 
-export class GetByIdProductController {
-  constructor(readonly getByIdProductUseCase: GetByIdProductUseCase) {}
+export class GetByUserTransformerController {
+  constructor(readonly getByIdTransformerUseCase: GetByIdTransformerUseCase) {}
 
   async run(req: Request, res: Response) {
-    const id: number = parseInt(req.params.id);
-    try {
-      const product = await this.getByIdProductUseCase.run(id);
+    const id_user: number = parseInt(req.params.id_user);
 
-      if (product)
+    try {
+      const transformer = await this.getByIdTransformerUseCase.run( id_user);
+
+      if (transformer)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
           data: {
-            id: product.id,
-            name: product.name,
-            description: product.description,
-            price: product.price,
+            id: transformer.id,
+            status: transformer.status,
+            id_user: transformer.id_user
           },
         });
       else

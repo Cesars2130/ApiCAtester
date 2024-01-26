@@ -17,8 +17,8 @@ export class GetAllUserController {
             return {
               id: user.id,
               name: user.name,
-              description: user.mail,
-              price: user.password,
+              mail: user.mail,
+              password: user.password,
             };
           }),
         });
