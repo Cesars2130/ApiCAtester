@@ -1,9 +1,7 @@
 import express from "express";
 
-import { createTransformerController } from "./dependencies";
-import { getAllTransformerController } from "./dependencies";
-import { getByIdTransformerController } from "./dependencies";
-import { getByUserTransformerController } from "./dependencies";
+import { createTransformerController, getAllTransformerController, getByIdTransformerController,getByUserTransformerController } from "./dependencies";
+
 
 
 export const transformerRouter = express.Router();
